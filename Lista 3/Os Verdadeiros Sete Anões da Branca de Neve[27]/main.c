@@ -29,7 +29,7 @@ int main()
         diff = soma_anao(anao[k]) - 100;
         for(i=0;i<9&&control==0;i++){
             for(j=0;j<9;j++){
-                if(anao[k][j]+anao[k][i] == diff && j!=i && soma_anao(anao[k])-(anao[k][j]+anao[k][i]) == 100){
+                if(anao[k][j]+anao[k][i] == diff && j!=i && soma_anao(anao[k])-anao[k][j]+anao[k][i] == 100){
                     control = 1;
                     break;
                 }
