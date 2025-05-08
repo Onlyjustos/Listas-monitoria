@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1745970229 source:d:\programacao\codeblocks\estudo\contamoeda(9)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1746072256 source:d:\programacao\codeblocks\estudo\lista-2-ip\contamoeda(9)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

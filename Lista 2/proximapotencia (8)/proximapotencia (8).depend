@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1745967387 source:d:\programacao\codeblocks\estudo\proximapotencia (8)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1746072035 source:d:\programacao\codeblocks\estudo\lista-2-ip\proximapotencia (8)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

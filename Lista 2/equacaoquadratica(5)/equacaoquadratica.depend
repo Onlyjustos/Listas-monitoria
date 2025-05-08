@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1745963153 source:d:\programacao\codeblocks\estudo\equacaoquadratica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1746042183 source:d:\programacao\codeblocks\estudo\lista-2-ip\equacaoquadratica(5)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

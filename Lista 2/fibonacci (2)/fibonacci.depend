@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1745969584 source:d:\programacao\codeblocks\estudo\fibonacci\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1745970965 source:d:\programacao\codeblocks\estudo\lista-2-ip\fibonacci (2)\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1745968430 source:d:\programacao\codeblocks\estudo\fatorial (1)\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1745968430 source:d:\programacao\codeblocks\estudo\lista-2-ip\fatorial (1)\main.c
+	<stdio.h>
+	<stdlib.h>
+

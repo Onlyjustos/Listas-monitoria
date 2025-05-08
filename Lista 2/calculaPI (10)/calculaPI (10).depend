@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1745974468 source:d:\programacao\codeblocks\estudo\calculapi (10)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1746040144 source:d:\programacao\codeblocks\estudo\lista-2-ip\calculapi (10)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

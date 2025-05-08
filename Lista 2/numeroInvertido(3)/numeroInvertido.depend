@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1745961075 source:d:\programacao\codeblocks\estudo\numeroinvertido\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1745961075 source:d:\programacao\codeblocks\estudo\lista-2-ip\numeroinvertido(3)\main.c
+	<stdio.h>
+	<stdlib.h>
+
