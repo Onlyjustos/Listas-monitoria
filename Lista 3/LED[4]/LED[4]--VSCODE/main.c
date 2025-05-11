@@ -7,7 +7,7 @@ int main() {
         char numero[101];
         scanf("%s",numero);
         while(numero[j]!='\0'){
-            soma += aux[numero[j]-'0'];
+            soma += aux[numero[j]-48];
             j++;
         }   
         printf("%d leds\n",soma);

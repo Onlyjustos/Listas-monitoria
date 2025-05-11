@@ -11,14 +11,27 @@ int main(void)
    while(1){
       scanf("%d",&M[l]);
       scanf("%d",&N[l]);
-      /* Formata os dados */
+      
       if(M[l]==0&&N[l]==0){
          break;
       }
       l++;
       
    }
+
+
+
+
+
+
+
+
+
+
+
+
    for(h=0;h<l;h++){
+      /* Formata os dados */
       sprintf(buffer, "%d", M[h]+N[h]);
       
    
@@ -41,5 +54,5 @@ int main(void)
    
    
    
-   //printf("string:\n%s\ncharacter count = %d\n", buffer, j);
+   
 }
