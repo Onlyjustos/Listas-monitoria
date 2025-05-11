@@ -24,8 +24,12 @@ int main()
         printf("RAIZES IMAGINARIAS");
     if(op == 1)
         printf("RAIZ UNICA\nX1 = %.2lf",r1);
-    if(op == 2)
-        printf("RAIZES DISTINTAS\nX1 = %.2lf\nX2 = %.2lf",r1,r2);
-
+    if(op == 2){
+        if(r1<r2) {
+            printf("RAIZES DISTINTAS\nX1 = %.2lf\nX2 = %.2lf\n",r1,r2);
+        }
+        else printf("RAIZES DISTINTAS\nX1 = %.2lf\nX2 = %.2lf\n",r2,r1);
+        
+    }
     return 0;
 }

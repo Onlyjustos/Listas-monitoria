@@ -9,12 +9,13 @@ int main()
 }
 int fibonacci( int t1, int t2, int n){
     int t3;
+    int i;
     int f[100];
     if(n==1)
         return t1;
     if(n==2)
         return t2;
-    for(int i = 2;i<n;i++){
+    for(i = 2;i<n;i++){
         t3 = t1 + t2;
         t1 = t2;
         t2 = t3;

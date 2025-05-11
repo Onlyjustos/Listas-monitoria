@@ -2,11 +2,22 @@
 #include <stdlib.h>
 #include <math.h>
 double compute_pi(int n) {
-    double pi = 2.0;
-    for (int i = 1; i <= n; i++)
-        pi *= (2.0 * i / (2.0 * i - 1.0)) * (2.0 * i / (2.0 * i + 1.0));
+    double pi=1.0 ,pitemp = 1,c=1.00;
+    
+    int i;
+    for (i = 1; i <= n; i++){      
+        pitemp = 2.0*c;
+        if(i%2!=0){
+            pitemp = pitemp / (2*c - 1.0);
+        }
+        else{
+            pitemp = pitemp / (2*c + 1.0);
+            c++;
+        }
 
-    return pi;
+        pi = pi * pitemp;
+    }
+    return pi*2.0;
 }
 
 

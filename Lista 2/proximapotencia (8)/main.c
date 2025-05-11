@@ -26,7 +26,7 @@ int main()
     x = next_power(n,p);
 
     //printf("%d -> %d^%d = %d",n,base,p,valor);
-    printf("%d -> %d ^ %d = %d",n,i,p,x);
+    printf("%d -> %d^%d = %d",n,i,p,x);
 
     return 0;
 }
