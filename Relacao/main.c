@@ -3,21 +3,23 @@
 #include <string.h>
 int quantidade;
 typedef struct Relacao{
-    int x;
-    int y;
+    int x[20];
+    int y[20];
     char nome;
+    int tamanho;
 }
 Relacao[100];
 void imprime(Relacao);
 void insere(Relacao);
-void operacao(Relacao);
+void operacao_composicao(Relacao);
+void operacao_inversao(Relacao);
 int valida_nome(Relacao,char);
 int main(){
     Relacao relacao;
     int op;  
     system("cls");
-    while(op!=4){
-        printf("Digite a opcao:\nInserir relacao(1);\nImprimir relacao (2);\nOperacao de relacao(3);\nSair(4);\n");
+    while(op!=5){
+        printf("Digite a opcao:\nInserir relacao(1);\nImprimir relacao (2);\nOperacao de relacao(3);\nOperacao de inversao(4);\nSair(5);\n");
         
         scanf("%d",&op);
         switch(op){
@@ -28,8 +30,12 @@ int main(){
                 imprime(relacao);
                 break;
             case 3:
-                operacao(relacao);
+                operacao_composicao(relacao);
                 break;
+            case 4:
+                operacao_inversao(relacao);
+            default:
+                exit;
         }
         
     }
@@ -49,32 +55,72 @@ void insere(Relacao relacao){
         
     }
     relacao[quantidade].nome = nome;
-    printf("Digite o par ordenado no fomato: x y\n");
-    scanf("%d %d",&relacao[quantidade].x,&relacao[quantidade].y);
+    relacao[quantidade].tamanho = 0;
+    while(1){
+        char quebrar;
+        printf("Digite o par ordenado no fomato: x y, para continuar digite ','\n");
+        
+        scanf("%d %d",&relacao[quantidade].x[relacao[quantidade].tamanho],&relacao[quantidade].y[relacao[quantidade].tamanho]);
+        relacao[quantidade].tamanho++;
+        getchar();
+        scanf("%c",&quebrar);
+        if(quebrar != ',')
+            break;
+    }
     system("cls");
     quantidade++;
+    
     
 }
 void imprime(Relacao relacao ){
     system("cls");
     printf("RELACOES:\n");
     for(int i=0;i<quantidade;i++){
-        printf("%c %d %d\n",relacao[i].nome,relacao[i].x,relacao[i].y);
+        printf("(%d) %c : ",i+1,relacao[i].nome);
+            for(int j = 0; j<relacao[i].tamanho;j++)
+                printf("{(%d,%d)} ",relacao[i].x[j],relacao[i].y[j]);
+            
+        printf("\n");
     }
     printf("\n\n");
 
 }
-void operacao(Relacao relacao){
+void operacao_composicao(Relacao relacao){
     int r,op1,op2;
     system("cls");
     printf("Digite os numero das relacao (no formato: R S)\n");
-    scanf(" %d",&op1);
-    scanf(" %d",&op2);
-    if(relacao[op1-1].y==relacao[op2-1].x)
-        printf("%c o %c = {(%d,%d)}\n",relacao[op1-1].nome,relacao[op2-1].nome,relacao[op1-1].x,relacao[op2-1].y);
-
-    else
-        printf("Operacao invalida\n\n");
+    scanf("%d",&op1);
+    scanf("%d",&op2);
+    getchar();
+    op1--;
+    op2--;
+    for (int i = 0;i<relacao[op1].tamanho;i++){
+        for(int j = 0;j<relacao[op2].tamanho;j++){
+            if(relacao[op1].y[i]==relacao[op2].x[j])
+                printf("%c o %c = {(%d,%d)}\n",relacao[op1].nome,relacao[op2].nome,relacao[op1].x[i],relacao[op2].y[j]);
+        
+        }
+    }
+    printf("\n\n");
+    
+    
+}
+void operacao_inversao(Relacao relacao){
+    int op;
+    system("cls");
+    printf("Digite o numero da relacao\n");
+    scanf("%d",&op);
+    op--;
+    int tam = relacao[op].tamanho,temp;
+    for(int i=0;i<tam;i++){
+        temp = relacao[op].x[i];
+        relacao[op].x[i] = relacao[op].y[i];
+        relacao[op].y[i] = temp;
+        
+    }
+    system("cls");
+    printf("inversao feita com sucesso ;)\n\n");
+    
     
 }
 int valida_nome(Relacao relacao,char nome){
@@ -89,3 +135,4 @@ int valida_nome(Relacao relacao,char nome){
     return 1;
 
 }
+
