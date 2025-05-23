@@ -18,7 +18,8 @@ int main(){
     Relacao relacao;
     int op;  
     system("cls");
-    while(op!=5){
+    fflush(stdin);
+    while(1){
         printf("Digite a opcao:\nInserir relacao(1);\nImprimir relacao (2);\nOperacao de relacao(3);\nOperacao de inversao(4);\nSair(5);\n");
         
         scanf("%d",&op);
@@ -34,10 +35,10 @@ int main(){
                 break;
             case 4:
                 operacao_inversao(relacao);
-            default:
-                exit;
+                break;
+            case 5:
+                exit(1);
         }
-        
     }
     
 
@@ -57,14 +58,14 @@ void insere(Relacao relacao){
     relacao[quantidade].nome = nome;
     relacao[quantidade].tamanho = 0;
     while(1){
-        char quebrar;
+        char quebrar; 
         printf("Digite o par ordenado no fomato: x y, para continuar digite ','\n");
         
         scanf("%d %d",&relacao[quantidade].x[relacao[quantidade].tamanho],&relacao[quantidade].y[relacao[quantidade].tamanho]);
         relacao[quantidade].tamanho++;
         getchar();
         scanf("%c",&quebrar);
-        if(quebrar != ',')
+        if(quebrar != ',') // se o cabra nao digitar ',' o baguio sai do loop
             break;
     }
     system("cls");
@@ -86,7 +87,7 @@ void imprime(Relacao relacao ){
 
 }
 void operacao_composicao(Relacao relacao){
-    int r,op1,op2;
+    int op1,op2,check;
     system("cls");
     printf("Digite os numero das relacao (no formato: R S)\n");
     scanf("%d",&op1);
@@ -98,11 +99,11 @@ void operacao_composicao(Relacao relacao){
         for(int j = 0;j<relacao[op2].tamanho;j++){
             if(relacao[op1].y[i]==relacao[op2].x[j])
                 printf("%c o %c = {(%d,%d)}\n",relacao[op1].nome,relacao[op2].nome,relacao[op1].x[i],relacao[op2].y[j]);
-        
+                check++;
         }
     }
-    printf("\n\n");
-    
+    check?printf("operacao invalida\n"):printf("\n");
+    printf("\n");
     
 }
 void operacao_inversao(Relacao relacao){
